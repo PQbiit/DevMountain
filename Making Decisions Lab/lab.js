@@ -9,7 +9,11 @@
 //CODE HERE
 console.log("-------PROBLEM 1-------");
 let lovesCode = true;
-if (lovesCode) {console.log("I love to code!")} else {console.log("Coding has its challenges.")}
+if (lovesCode){
+  console.log("I love to code!")
+}else{
+  console.log("Coding has its challenges.")
+}
 
 // For problems 2-3 use the following lines of code:
 var amysAge = 29
