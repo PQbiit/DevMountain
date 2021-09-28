@@ -1,0 +1,47 @@
+body{
+    background-color: #41b2a3;
+}
+
+p{
+    color: #ffffff;
+}
+
+.yellow-text {
+    color: yellow;
+    font-weight: 100;
+}
+
+#site-title{
+    color: yellow;
+    text-decoration: underline;
+    text-align: center;
+}
+#site-title:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+img{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    border: solid 1px orange;
+}
+
+main{
+    border: solid 1px orange;
+    display: flex;
+    flex-direction: row;
+}
+
+aside{
+    border: solid 1px orange;
+}
+
+footer{
+    border: solid 1px orange;
+}

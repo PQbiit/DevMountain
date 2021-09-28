@@ -1,0 +1,39 @@
+#square-section{
+    background-color: yellow;
+  }
+  
+  #circle-section{
+    background-color: green;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50vh;
+  }
+  
+  div {
+    width: 50px;
+    height: 50px;
+    border: dashed 1px #000000;
+  }
+  
+  .circle {
+    border-radius: 50%;
+  }
+  
+  .first-square{
+    margin-left: 50px;
+  }
+
+  body {
+      margin: 0;
+  }
+
+  .middle-circle {
+      border-color: red;
+      position: relative;
+      top: 50px;
+      left: 500px;
+  }
