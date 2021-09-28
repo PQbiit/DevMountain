@@ -17,7 +17,7 @@ module.exports = {
         let newHouse = {
             id: globalId,
             address,
-            price: parseInt(price),
+            price,
             imageURL
         };
         db.push(newHouse);
