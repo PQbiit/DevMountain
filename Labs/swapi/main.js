@@ -24,24 +24,24 @@ function setResidentsTable(nameEN,nameWOK){
     residentsTable.append(entryRow);
 }
 
+function getResidentsENG(resident){
+    return axios.get(resident);
+}
+
+function getResidentsWOK(resident){
+    return axios.get(`${resident}?format=wookiee`);
+}
+
 residentsBtn.addEventListener('click', () =>{
-    setTableHeaders();
+    setTableHeaders();    
     axios.get('https://swapi.dev/api/planets/?search=Alderaan').then((res)=>{
         const alderaanResidents = res.data.results[0].residents;
         for (let i = 0; i < alderaanResidents.length; i++) {
-            let residentNameEN = "";
-            let residentNameWOK = "";
-            
-            axios.get(alderaanResidents[i]).then((resENG) => {
-                residentNameEN = resENG.data.name;
-                axios.get(`${alderaanResidents[i]}?format=wookiee`).then((resWOK) => {
-                    residentNameWOK = resWOK.data.whrascwo;
-                    setResidentsTable(residentNameEN,residentNameWOK);
-                }).catch(e =>{
-                    console.log(e);
-                });
-            }).catch(e =>{
-                console.log(e);
+            const resident = alderaanResidents[i];
+            axios.all([getResidentsENG(resident),getResidentsWOK(resident)]).then(results =>{
+                let engName = results[0].data.name;
+                let wokName = results[1].data.whrascwo;
+                setResidentsTable(engName,wokName);
             });
         }
     }).catch(e => {
